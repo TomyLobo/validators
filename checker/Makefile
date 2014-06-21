@@ -5,7 +5,7 @@ all: $(PROGRAM)
 $(PROGRAM): copy
 
 build:
-	git clone https://github.com/validator/build.git build
+	git clone https://github.com/TomyLobo/build.git build
 	-`which python` build/build.py all
 	-`which python` build/build.py checkout dldeps dltests build test
 
