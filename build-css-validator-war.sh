@@ -14,6 +14,7 @@ if [ ! -d 2002 ]; then
     # fix for an issue with the Velocity templates
     sed -i '/Velocity.getLog/i }' ./2002/css-validator/org/w3c/css/index/IndexGenerator.java
     sed -i '/For each language, we set the context/i if(false) {' ./2002/css-validator/org/w3c/css/index/IndexGenerator.java
+    sed -i 's/"1.6"/"1.7"/g' ./2002/css-validator/build.xml
 fi;
 
 # build the jar file
