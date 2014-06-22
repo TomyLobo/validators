@@ -27,7 +27,8 @@ object ValidatorsBuild extends Build {
         (old) =>
           {
             case "META-INF/MANIFEST.MF" => MergeStrategy.rename
-            case r if r.endsWith("about.html") => MergeStrategy.discard
+            case "about.html" => MergeStrategy.discard
+            case r if r.endsWith("about.html") => MergeStrategy.last
             case r if r.endsWith("logback.xml") => MergeStrategy.discard
             case r if r.startsWith("org" + fs + "jaxen" + fs + "expr" + fs + "DefaultVariableReferenceExpr.class") => MergeStrategy.concat
             case r if r.startsWith("org" + fs + "jaxen" + fs + "expr" + fs + "PredicateSet.class") => MergeStrategy.concat
